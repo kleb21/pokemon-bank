@@ -1,1 +1,40 @@
-<p>main works!</p>
+<div class="py-5 row d-flex justify-content-center align-items-center vh-100" style="background-image: url(../assets/iamges/background.webp);
+background-repeat: no-repeat;
+           background-size: cover ;">
+
+ <div class="col-md-4 text-center">
+   <div class="card py-5 bg-transparent text-white">
+     <div class="card-header">
+       Datos del usuario
+     </div>
+     <div class="card-body ">
+       <p><strong>Nombre:</strong> Juan Pérez</p>
+       <p><strong>Número de cuenta:</strong> 123456789</p>
+       <p><strong>Fondos:</strong> $1,234.56</p>
+     </div>
+   </div>
+ </div>
+ <div class="col-md-6">
+   <div class="row d-flex flex-wrap align-items-stretch">
+     <label class="col-6 d-flex justify-content-center align-items-center " >
+       <button class="btn btn-outline-light btn-block my-3 text-center w-50" style="height: 150px;">Depositar</button>
+     </label>
+     <label class="col-6 d-flex justify-content-center align-items-center ">
+       <button class="btn btn-outline-light btn-block my-3 text-center w-50" style="height: 150px;">Retirar</button>
+     </label>
+     <label class="col-6 d-flex justify-content-center align-items-center">
+       <button class="btn btn-outline-light btn-block my-3 text-center w-50" style="height: 150px;">Pagos de servicio</button>
+     </label>
+     <label class="col-6 d-flex justify-content-center align-items-center ">
+       <button class="btn btn-outline-light btn-block my-3 text-center w-50" style="height: 150px;">Historial</button>
+     </label>
+   </div>
+ </div>
+ <div class="d-flex">
+  <div class="ms-auto me-3">
+    <button (click)="testSwal()" class="btn btn-danger">Desloguearse</button>
+  </div>
+ </div>
+</div>
+
+
