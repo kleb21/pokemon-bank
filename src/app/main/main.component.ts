@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 export class MainComponent {
   jsonData: any;
   users?: any[];
+  userData: any;
   constructor(private http: HttpClient, private router: Router){}
 
   ngOnInit() {
@@ -25,6 +26,27 @@ export class MainComponent {
         };
       });
     });
+
+    const state = this.router.getCurrentNavigation()?.extras.state;
+    if (state && state['users']) {
+      this.users = state['users'];
+      if(this.users !== undefined) {
+            if (this.users.length > 0) {
+        this.userData = this.users[0];
+      }
+    } else {
+      this.http.get('assets/data.json').subscribe((data: any) => {
+        this.users = data;
+        if(this.users !== undefined) {
+            if (this.users.length > 0) {
+          this.userData = this.users[0];
+        }
+        }
+
+      });
+    }
+      }
+
   }
 
   confirmLogout() {

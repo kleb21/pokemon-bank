@@ -13,12 +13,12 @@
               <div class="form-outline form-white mb-4">
                 <div class="input-group">
                   <span class="input-group-text">$</span>
-                  <input type="number" id="" class="form-control form-control-lg" placeholder="ejem: 250.50" />
+                  <input [(ngModel)]="monto" type="number" id="" class="form-control form-control-lg" placeholder="ejem: 250.50" />
                 </div>
                 <label class="form-label" for="">Monto</label>
               </div>
 
-              <a  (click)="montoIngresado()"  class="btn btn-outline-light btn-lg px-5" type="submit">Agregar Monto</a>
+              <a (click)="montoIngresado()"  id=""  class="btn btn-outline-light btn-lg px-5" type="submit">Agregar Monto</a>
 
             </div>
 
