@@ -2,38 +2,42 @@
 background-repeat: no-repeat;
            background-size: cover ;">
 
+
+<nav class="navbar navbar-expand-lg navbar-light  d-flex justify-content-center align-items-center">
+  <div class="container-fluid">
+    <a [routerLink]="['/deposit']" class="navbar-brand text-white">Depositar</a>
+  </div>
+  <div class="container-fluid">
+    <a [routerLink]="['/draw-on']" class="navbar-brand text-white">Retirar</a>
+  </div>
+  <div class="container-fluid">
+    <a [routerLink]="['/service-pay']" class="navbar-brand text-white">Pagar Servicios</a>
+  </div>
+  <div class="container-fluid">
+    <a [routerLink]="['/record-page']" class="navbar-brand text-white">Historial</a>
+  </div>
+  <div class="container-fluid ml-auto" style="display: flex; justify-content: left; ">
+    <a  (click)="confirmLogout()" class="navbar-brand" style="color: red;">Salir</a>
+  </div>
+</nav>
+
  <div class="col-md-4 text-center">
    <div class="card py-5 bg-transparent text-white">
      <div class="card-header">
        Datos del usuario
      </div>
      <div class="card-body ">
-       <p><strong>Nombre:</strong> Juan Pérez</p>
-       <p><strong>Número de cuenta:</strong> 123456789</p>
-       <p><strong>Fondos:</strong> $1,234.56</p>
+      <ng-container *ngFor="let user of users">
+       <p><strong>Nombre:</strong> {{ user.username }} </p>
+       <p><strong>Número de cuenta:</strong> {{ user.accountNumber }} </p>
+       <p><strong>Fondos:</strong> $ {{ user.money }}</p>
+      </ng-container>
+
      </div>
    </div>
  </div>
- <div class="col-md-6">
-   <div class="row d-flex flex-wrap align-items-stretch">
-     <label class="col-6 d-flex justify-content-center align-items-center " >
-       <button class="btn btn-outline-light btn-block my-3 text-center w-50" style="height: 150px;">Depositar</button>
-     </label>
-     <label class="col-6 d-flex justify-content-center align-items-center ">
-       <button class="btn btn-outline-light btn-block my-3 text-center w-50" style="height: 150px;">Retirar</button>
-     </label>
-     <label class="col-6 d-flex justify-content-center align-items-center">
-       <button class="btn btn-outline-light btn-block my-3 text-center w-50" style="height: 150px;">Pagos de servicio</button>
-     </label>
-     <label class="col-6 d-flex justify-content-center align-items-center ">
-       <button class="btn btn-outline-light btn-block my-3 text-center w-50" style="height: 150px;">Historial</button>
-     </label>
-   </div>
- </div>
+
  <div class="d-flex">
-  <div class="ms-auto me-3">
-    <button (click)="testSwal()" class="btn btn-danger">Desloguearse</button>
-  </div>
  </div>
 </div>
 
